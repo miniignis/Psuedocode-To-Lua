@@ -37,3 +37,22 @@ while loop == "y" do
 end
 
 print("Your total is... " .. total)
+
+-- #4
+-- Have the user define a maximum number, print out a random number between 0 and their numbers
+-- Have the user play again or quit
+
+math.randomseed(os.time())
+local playing = "y"
+while playing == "y" do
+    print("Input a maximum number.")
+    local max = io.read()
+    while tonumber(max) == nil do
+        print("Not a number! Try again.")
+        max = io.read()
+    end
+    local random_number = math.random(max)
+    print("Your random number is..." .. random_number)
+    print("Again? (y/n)")
+    playing = io.read()
+end

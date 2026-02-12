@@ -15,3 +15,34 @@ while tonumber(numberA) == nil or tonumber(numberB) == nil do
     numberB = io.read()
 end
 print(numberA + numberB)
+
+-- #3
+-- Get an unknown amount of numbers from the user, add them together, print out the result.
+local loop = true
+local total = 0
+
+while loop do
+    print("Please enter a number.")
+    
+    input = io.read()
+    while tonumber(input) == nil do
+        print("Number invalid! Try again.")
+        input = io.read()
+    end
+
+    total = total + input
+
+    print("Continue? (y/n)")
+    input = io.read()
+
+    while input ~= "y" and input ~= "n" do
+        print("Invalid input! Try again (y/n)")
+        input = io.read()
+    end
+
+    if input == "n" then
+        loop = false
+    end
+end
+
+print("Your total is... " .. total)

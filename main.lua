@@ -18,10 +18,10 @@ print(numberA + numberB)
 
 -- #3
 -- Get an unknown amount of numbers from the user, add them together, print out the result.
-local loop = true
+local loop = "y"
 local total = 0
 
-while loop do
+while loop == "y" do
     print("Please enter a number.")
     
     input = io.read()
@@ -33,16 +33,7 @@ while loop do
     total = total + input
 
     print("Continue? (y/n)")
-    input = io.read()
-
-    while input ~= "y" and input ~= "n" do
-        print("Invalid input! Try again (y/n)")
-        input = io.read()
-    end
-
-    if input == "n" then
-        loop = false
-    end
+    loop = io.read()
 end
 
 print("Your total is... " .. total)
